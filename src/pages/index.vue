@@ -2,7 +2,6 @@
 import type { EpisodeModule } from '../typing/types'
 import { getAllEpisodes, getEpisodeId } from '../utils/episode'
 const episodes = getAllEpisodes()
-console.log(episodes)
 
 let sort = $ref<'asc' | 'desc'>('desc')
 const handleSort = () => {

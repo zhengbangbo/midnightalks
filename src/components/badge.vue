@@ -6,7 +6,7 @@
   <div
     class="badge"
     flex="~ row gap-2"
-    items-center justify-center px-1 py-2 text-sm font-400 border-rounded h-24px 
+    items-center justify-center px-1 py-2 text-sm font-400 border-rounded h-24px
   >
     <slot name="icon" />
   </div>
