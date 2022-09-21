@@ -3,7 +3,8 @@
 
 <template>
   <app-header />
-  <RouterView />
+  <router-view />
+  <app-footer />
 </template>
 
 <style scoped>
