@@ -11,6 +11,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "github-markdown-css": "^5.1.0",
     "vue": "^3.2.37"
   },
   "devDependencies": {

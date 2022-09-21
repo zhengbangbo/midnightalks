@@ -1,3 +1,5 @@
+import type { Component } from 'vue'
+
 export interface EpisodeInfo {
   id: string
   date: Date
@@ -5,4 +7,8 @@ export interface EpisodeInfo {
   hosts: string[]
   guests: string[]
   description: string
+}
+
+export interface EpisodeModule extends EpisodeInfo {
+  default: Component
 }

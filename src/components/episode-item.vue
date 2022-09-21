@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { format } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 import { useRouter } from 'vue-router'
-import type { EpisodeInfo } from '../typing/types'
+import type { EpisodeModule } from '../typing/types'
 
 const { info } = defineProps<{
-  info: EpisodeInfo
+  info: EpisodeModule
 }>()
 
 const router = useRouter()
@@ -46,7 +46,7 @@ const handleClick = () => {
       </badge>
     </div>
 
-    <span>
+    <span class="description">
       {{ info.description }}
     </span>
   </div>
@@ -58,5 +58,8 @@ const handleClick = () => {
 }
 .title {
   color: var(--text-color)
+}
+.description {
+  color: var(--text-color);
 }
 </style>
