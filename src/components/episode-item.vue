@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { format, parseISO } from 'date-fns'
 import { useRouter } from 'vue-router'
-import type { EpisodeModule } from '../typing/types'
+import type { Episode } from '../typing/types'
 
 const { info } = defineProps<{
-  info: EpisodeModule
+  info: Episode
 }>()
 
 const router = useRouter()
@@ -12,7 +12,7 @@ const router = useRouter()
 const date = $computed(() => format(info.date, 'yyyy-MM-dd'))
 const handleClick = () => {
   router.push({
-    path: `/episode/${info.id}`,
+    path: `/episodes/${info.id}`,
   })
 }
 </script>

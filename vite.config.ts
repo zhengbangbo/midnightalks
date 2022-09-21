@@ -1,7 +1,6 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
 import Component from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
@@ -13,7 +12,7 @@ export default defineConfig({
   plugins: [Vue({
     include: [/\.vue$/, /\.md$/],
     reactivityTransform: true,
-  }), Pages(), Component({
+  }), Component({
     dts: path.resolve(pathSrc, 'typing/components.d.ts'),
   }), AutoImport({
     imports: ['vue', 'vue-router', '@vueuse/core'],

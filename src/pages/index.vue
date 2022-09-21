@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { EpisodeModule } from '../typing/types'
-import { getAllEpisodes, getEpisodeId } from '../utils/episode'
+import { getAllEpisodes } from '../utils/episode'
 const episodes = getAllEpisodes()
 
 let sort = $ref<'asc' | 'desc'>('desc')

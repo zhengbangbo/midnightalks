@@ -1,6 +1,6 @@
 import type { Component } from 'vue'
 
-export interface EpisodeInfo {
+export interface RawEpisode {
   id: string
   date: Date
   title: string
@@ -9,6 +9,6 @@ export interface EpisodeInfo {
   description: string
 }
 
-export interface EpisodeModule extends EpisodeInfo {
+export interface Episode extends RawEpisode {
   default: Component
 }
