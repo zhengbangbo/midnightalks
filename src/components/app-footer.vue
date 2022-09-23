@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <footer text-center py-6 leading-7>
+  <footer relative  text-center py-6 leading-7>
     <p>
       设计来自
       <a href="https://pan.icu/" target="_blank">内核恐慌</a>,
