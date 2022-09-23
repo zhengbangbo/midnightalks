@@ -21,6 +21,7 @@ const handle = () => {
     </div>
   </div>
   <div container mx-auto px-4>
+    <h1 text-center text-2xl font-bold mb-4 v-html="episode.title" />
     <component :is="episode.default" v-if="episode" />
   </div>
 </template>
