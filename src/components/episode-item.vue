@@ -20,12 +20,13 @@ const handleClick = () => {
 <template>
   <div
     flex="~ col"
-    w-480px h-380px px-4 py-6 items-center class="episode-item"
+    max-w-lg
+    items-center rounded class="episode-item"
   >
-    <h2 text-20px font-500 class="title" py-3 cursor-pointer @click="handleClick">
+    <h2 text-20px font-500 class="title" p-2 cursor-pointer @click="handleClick">
       {{ info.title }}
     </h2>
-    <div flex="~ row gap-2" pb-2>
+    <div flex="~ row gap-2">
       <badge>
         <template #icon>
           <div i-carbon-calendar />
@@ -46,7 +47,7 @@ const handleClick = () => {
       </badge>
     </div>
 
-    <span class="description">
+    <span class="description" p-2>
       {{ info.description }}
     </span>
   </div>
