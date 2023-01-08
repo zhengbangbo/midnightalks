@@ -5,20 +5,22 @@ import { getEpisode, getEpisodeCover, getEpisodeCreated, getEpisodeTitle } from 
 
 const episodeData = ref()
 onBeforeMount(async () => episodeData.value = getEpisode(await PodcastData()))
+const anchor = (sth: number) => `#${sth.toString()}`
 </script>
 
 <template>
   <div class="body">
     <div class="cover">
       <img
-        v-for="ep in episodeData" :key="getEpisodeCreated(ep)" v-lazy="getEpisodeCover(ep)"
+        v-for="ep in episodeData" :id="getEpisodeCreated(ep)" :key="getEpisodeCreated(ep)"
+        v-lazy="getEpisodeCover(ep)"
         :alt="getEpisodeTitle(ep)"
       >
     </div>
 
     <div class="episode">
       <div v-for="ep in episodeData" :key="getEpisodeCreated(ep)">
-        {{ getEpisodeTitle(ep) }}
+        <a :href="anchor(getEpisodeCreated(ep))">{{ getEpisodeTitle(ep) }}</a>
       </div>
     </div>
   </div>
