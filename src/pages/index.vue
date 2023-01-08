@@ -1,39 +1,59 @@
 <script setup lang="ts">
-import { getAllEpisodes } from '../utils/episode'
-const episodes = getAllEpisodes()
+import { onBeforeMount, ref } from 'vue'
+import { PodcastData } from '../apis'
+import { getEpisode, getEpisodeCover, getEpisodeCreated, getEpisodeTitle } from '../utils'
 
-let sort = $ref<'asc' | 'desc'>('desc')
-const handleSort = () => {
-  sort = sort === 'asc' ? 'desc' : 'asc'
-}
-
-const sortedEpisodes = $computed(() =>
-  [...episodes].sort((a, b) => {
-    if (sort === 'asc')
-      return a.date.getTime() - b.date.getTime()
-    else
-      return b.date.getTime() - a.date.getTime()
-  }))
+const episodeData = ref()
+onBeforeMount(async () => episodeData.value = getEpisode(await PodcastData()))
 </script>
 
 <template>
-  <div flex="~ col" justify-center px-2>
-    <div flex="~ row gap-2" justify-end items-center py-2 px-6>
-      <div flex="~ row gap-1" items-center cursor-pointer border-1 border-rounded @click="handleSort">
-        <div :class="sort === 'desc' ? 'i-carbon-sort-descending' : 'i-carbon-sort-ascending'" />
-        <div>
-          按发布时间排序
-        </div>
-      </div>
+  <div class="body">
+    <div class="cover">
+      <img
+        v-for="ep in episodeData" :key="getEpisodeCreated(ep)" v-lazy="getEpisodeCover(ep)"
+        :alt="getEpisodeTitle(ep)"
+      >
     </div>
-    <div class="episode-container" gap-2 justify-center grid>
-      <episode-item v-for="info in sortedEpisodes" :key="info.id" :info="info" />
+
+    <div class="episode">
+      <div v-for="ep in episodeData" :key="getEpisodeCreated(ep)">
+        {{ getEpisodeTitle(ep) }}
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.episode-container {
-  grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
+.body {
+  display: flex;
+}
+
+.cover {
+  flex: 1;
+}
+
+.cover img {
+  display: inline-block;
+  width: 48%;
+  padding: 10px;
+}
+
+.episode {
+  width: 500px;
+  padding-top: 20px;
+
+  font-family: "Smiley Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
+
+  color: #fff;
+}
+
+.episode div:hover {
+  color: #000;
+  cursor: pointer;
 }
 </style>

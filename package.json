@@ -1,39 +1,41 @@
 {
-  "name": "midnight-talks",
+  "name": "midnightalks",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "vite --port=3333 --open",
     "build": "vite-ssg build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest ."
   },
   "dependencies": {
-    "github-markdown-css": "^5.1.0",
-    "vue": "^3.2.37"
+    "rss-to-json": "^2.1.0",
+    "vue": "^3.2.45",
+    "vue3-lazy": "1.0.0-alpha.1"
   },
   "devDependencies": {
-    "@iconify-json/carbon": "^1.1.8",
-    "@types/node": "^18.7.18",
-    "@unocss/reset": "^0.45.21",
-    "@unocss/transformer-directives": "^0.45.21",
-    "@vitejs/plugin-vue": "^3.1.0",
-    "@vue/runtime-core": "^3.2.39",
-    "@vueuse/core": "^9.2.0",
-    "@vueuse/head": "^0.7.12",
+    "@iconify-json/carbon": "^1.1.13",
+    "@types/node": "^18.11.18",
+    "@unocss/reset": "^0.45.30",
+    "@unocss/transformer-directives": "^0.45.30",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vue/runtime-core": "^3.2.45",
+    "@vueuse/core": "^9.10.0",
+    "@vueuse/head": "^0.7.13",
     "@zhengbangbo/eslint-config": "^0.0.8",
     "date-fns": "^2.29.3",
-    "eslint": "^8.23.1",
-    "typescript": "^4.6.4",
-    "unocss": "^0.45.21",
-    "unplugin-auto-import": "^0.11.2",
-    "unplugin-vue-components": "^0.22.7",
-    "vite": "^3.1.0",
-    "vite-plugin-inspect": "^0.7.2",
-    "vite-plugin-vue-markdown": "^0.22.1",
+    "eslint": "^8.31.0",
+    "typescript": "^4.9.4",
+    "unocss": "^0.45.30",
+    "unplugin-auto-import": "^0.11.5",
+    "unplugin-vue-components": "^0.22.12",
+    "vite": "^3.2.5",
+    "vite-plugin-inspect": "^0.7.12",
     "vite-ssg": "^0.20.2",
-    "vue-router": "^4.1.5",
-    "vue-tsc": "^0.40.4"
+    "vitest": "^0.26.3",
+    "vue-router": "^4.1.6",
+    "vue-tsc": "^0.40.13"
   }
 }

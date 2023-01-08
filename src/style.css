@@ -1,6 +1,7 @@
 :root {
-  --header-bg: linear-gradient(180deg, #B7DCA7 0%, rgba(183, 220, 167, 0) 100%);
-  --border-color: #E4E7ED;
-  --badge-bg: #C3E1B5;
-  --text-color: #333;
+    --header-bg: linear-gradient(180deg, #B7DCA7 0%, rgba(183, 220, 167, 0) 100%);
+    --border-color: #E4E7ED;
+    --badge-bg: #C3E1B5;
+    --text-color: #333;
+    background: linear-gradient(90deg, #021830 0%, #f37715 100%);
 }
