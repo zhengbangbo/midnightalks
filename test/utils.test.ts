@@ -50,6 +50,16 @@ describe('fixedCoverUrl', () => {
       url: 'http://cdn.lizhi.fm/audio_cover/2023/01/05/2984336684564983303_80x80.jpg',
       expectUrl: 'https://cdn.lizhi.fm/audio_cover/2023/01/05/2984336684564983303_1000x1000.jpg',
     },
+    {
+      name: '老版（url短两位）2014/03/10 - 2016/08/18',
+      url: 'http://cdn.lizhi.fm/audio_cover/2016/07/03/29685158255628935_80x80.jpg',
+      expectUrl: 'https://cdn.lizhi.fm/audio_cover/2016/07/03/29685158255628935.jpg',
+    },
+    {
+      name: '老版（url短三位）2013/08/06 - 2014/03/06',
+      url: 'http://cdn.lizhi.fm/audio_cover/2013/08/22/5417698328056586_80x80.jpg',
+      expectUrl: 'https://cdn.lizhi.fm/audio_cover/2013/08/22/5417698328056586.jpg',
+    },
   ]
   testcase.forEach(({
     name,

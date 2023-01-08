@@ -58,5 +58,11 @@ export function getEpisodeCover(aEpisode: episode) {
 
 export function fixedCoverUrl(originUrl: string) {
   if (!originUrl) return ''
+  if (originUrl.length === 69)
+    return `https${originUrl.toString().slice(4, 59)}.jpg`
+
+  if (originUrl.length === 70)
+    return `https${originUrl.toString().slice(4, 60)}.jpg`
+
   return `https${originUrl.toString().slice(4, 62)}_1000x1000.jpg`
 }
