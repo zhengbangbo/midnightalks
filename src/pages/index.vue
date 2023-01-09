@@ -45,9 +45,6 @@ const anchor = (sth: number) => `#${sth.toString()}`
   width: 500px;
   padding-top: 20px;
 
-  font-family: "Smiley Sans";
-  font-style: italic;
-  font-weight: 400;
   font-size: 26px;
   line-height: 32px;
 

@@ -4,4 +4,10 @@
     --badge-bg: #C3E1B5;
     --text-color: #333;
     background: linear-gradient(90deg, #021830 0%, #f37715 100%);
+    font-family: "Smiley Sans", "SmileySansFile", sans-serif;
+}
+
+@font-face {
+    font-family: "SmileySansFile";
+    src: url("SmileySans.woff2") format('woff2');
 }
