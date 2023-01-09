@@ -13,7 +13,7 @@ import Parse from 'rss-to-json'
 
 export async function PodcastData() {
   try {
-    const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
+    const CORS_PROXY = 'https://cors-anywhere.zbb.workers.dev/'
     const url = 'https://rss.lizhi.fm/rss/14275.xml'
     return await Parse(CORS_PROXY + url)
   }
