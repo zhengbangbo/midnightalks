@@ -4,6 +4,8 @@ import { ViteSSG } from 'vite-ssg'
 import type { RouteRecordRaw } from 'vue-router'
 import lazyPlugin from 'vue3-lazy'
 import App from './App.vue'
+import loading from './assets/logo.jpg'
+import error from './assets/not-found.jpg'
 import './style.css'
 
 const routes: RouteRecordRaw[] = [
@@ -25,8 +27,8 @@ export const createApp = ViteSSG(
     initialState,
   }) => {
     app.use(lazyPlugin, {
-      loading: 'logo-large.jpg',
-      error: 'not-found.jpg',
+      loading,
+      error,
     })
   },
 )
