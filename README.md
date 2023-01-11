@@ -1,5 +1,5 @@
 # Midnight Talks Website
-![](https://img.shields.io/badge/vue-3.2.45-brightgreen)
+![](https://img.shields.io/badge/vue-3.2-brightgreen)
 [![](https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true)](https://chat.imzbb.cc)
 
 This site was developed by listeners of the podcast and is not an official site.

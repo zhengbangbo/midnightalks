@@ -9,50 +9,21 @@ const anchor = (sth: number) => `#${sth.toString()}`
 </script>
 
 <template>
-  <div class="body">
-    <div class="cover">
+  <div flex="~">
+    <div flex-1 overflow-auto>
       <img
-        v-for="ep in episodeData" :id="getEpisodeCreated(ep)" :key="getEpisodeCreated(ep)"
-        v-lazy="getEpisodeCover(ep)"
+        v-for="ep in episodeData"
+        :id="getEpisodeCreated(ep)" :key="getEpisodeCreated(ep)" v-lazy="getEpisodeCover(ep)"
+        inline-block w="50%"
         :alt="getEpisodeTitle(ep)"
       >
     </div>
 
-    <div class="episode">
+    <div overflow-auto w="38.2%" text-26px>
       <div v-for="ep in episodeData" :key="getEpisodeCreated(ep)">
-        <a :href="anchor(getEpisodeCreated(ep))">{{ getEpisodeTitle(ep) }}</a>
+        <a :href="anchor(getEpisodeCreated(ep))" hover="color-white">{{ getEpisodeTitle(ep) }}</a>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.body {
-  display: flex;
-}
-
-.cover {
-  flex: 1;
-}
-
-.cover img {
-  display: inline-block;
-  width: 48%;
-  padding: 10px;
-}
-
-.episode {
-  width: 500px;
-  padding-top: 20px;
-
-  font-size: 26px;
-  line-height: 32px;
-
-  color: #fff;
-}
-
-.episode div:hover {
-  color: #000;
-  cursor: pointer;
-}
-</style>

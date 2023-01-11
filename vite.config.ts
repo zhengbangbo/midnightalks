@@ -19,4 +19,9 @@ export default defineConfig({
     dirs: [path.resolve(pathSrc, 'composables')],
     dts: path.resolve(pathSrc, 'typing/components.d.ts'),
   }), Unocss(), Inspect()],
+  resolve: {
+    alias: {
+      '~/': `${path.resolve(__dirname, 'src')}/`,
+    },
+  },
 })
