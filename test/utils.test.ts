@@ -7,34 +7,44 @@ import {
   getEpisodeCreated,
   getEpisodeDescription,
   getEpisodeTitle,
+  getNumberFrom,
   getPodcastDescription,
   getPodcastTitle,
 } from '../src/utils'
-import { data } from './data/rss'
+import { items, podcastObj } from './data/rss'
 
 test('getPodcastTitle', () => {
-  expect(getPodcastTitle(data as podcast)).toMatchInlineSnapshot('"大内密谈"')
+  expect(getPodcastTitle(podcastObj as podcast)).toMatchInlineSnapshot('"大内密谈"')
 })
 test('getPodcastDescription', () => {
-  expect(getPodcastDescription(data as podcast)).toMatchInlineSnapshot('"「大内密谈Midnightalks」是一档由“深夜谈谈Midnight Network”出品的播客节目。密而不宣，无所不谈。"')
+  expect(getPodcastDescription(podcastObj as podcast)).toMatchInlineSnapshot('"「大内密谈Midnightalks」是一档由“深夜谈谈Midnight Network”出品的播客节目。密而不宣，无所不谈。"')
 })
 test('getEpisode', () => {
-  expect(getEpisode(data as podcast)[0]).toBeTypeOf('object')
+  expect(getEpisode(podcastObj as podcast)[0]).toBeTypeOf('object')
 })
 test('getEpisodeTitle', () => {
-  const episode: episode = getEpisode(data as podcast)[0]
+  const episode: episode = getEpisode(podcastObj as podcast)[0]
   expect(getEpisodeTitle(episode)).toBeTypeOf('string')
 })
+
+describe('getNumberFromTitle', () => {
+  items.forEach(({ title }) => {
+    test(title, () => {
+      expect(getNumberFrom(title)).toBeTypeOf('string')
+    })
+  })
+})
+
 test('getEpisodeDescription', () => {
-  const episode: episode = getEpisode(data as podcast)[0]
+  const episode: episode = getEpisode(podcastObj as podcast)[0]
   expect(getEpisodeDescription(episode)).toBeTypeOf('string')
 })
 test('getEpisodeCreated', () => {
-  const episode: episode = getEpisode(data as podcast)[0]
+  const episode: episode = getEpisode(podcastObj as podcast)[0]
   expect(getEpisodeCreated(episode)).toBeTypeOf('number')
 })
 test('getEpisodeCover', () => {
-  const episode: episode = getEpisode(data as podcast)[0]
+  const episode: episode = getEpisode(podcastObj as podcast)[0]
   expect(getEpisodeCover(episode)).toBeTypeOf('string')
 })
 

@@ -2,12 +2,10 @@
 </script>
 
 <template>
-  <div>
-    <DeclarationBanner />
-    <div class="flex">
-      <div class="grow">
-        <slot />
-      </div>
+  <div class="flex">
+    <div class="grow">
+      <slot />
     </div>
   </div>
+  <DeclarationBanner ref="banner" />
 </template>

@@ -9,13 +9,13 @@
  * - [ ] htmlparser2
  * - [ ] fast-xml-parser
  */
-import Parse from 'rss-to-json'
+import { default as rss2json } from 'rss-to-json'
 
 export async function PodcastData() {
   try {
     const CORS_PROXY = 'https://cors-anywhere.zbb.workers.dev/'
     const url = 'https://rss.lizhi.fm/rss/14275.xml'
-    return await Parse(CORS_PROXY + url)
+    return await rss2json(CORS_PROXY + url)
   }
   catch (e) {
     console.error(e)
