@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <atom:link href="http://rss.lizhi.fm/rss/14275.xml" rel="self" type="application/rss+xml"/>
+    <title><![CDATA[大内密谈]]></title>
+    <link>http://www.lizhi.fm</link>
+    <language>zh-CN</language>
+    <itunes:author><![CDATA[大内密谈]]></itunes:author>
+    <itunes:summary><![CDATA[「大内密谈Midnightalks」是一档由“深夜谈谈Midnight Network”出品的播客节目。密而不宣，无所不谈。]]></itunes:summary>
+    <description><![CDATA[「大内密谈Midnightalks」是一档由“深夜谈谈Midnight Network”出品的播客节目。密而不宣，无所不谈。]]></description>
+    <copyright><![CDATA[Copyright @荔枝FM www.lizhi.fm]]></copyright>
+    <itunes:owner>
+      <itunes:name><![CDATA[大内密谈]]></itunes:name>
+      <itunes:email>midnighttalks@nova-ent.com</itunes:email>
+    </itunes:owner>
+    <itunes:keywords></itunes:keywords>
+    <itunes:image href="http://cdn.lizhi.fm/podcast_cover/2018/12/10/2708425912842789447.jpg"/>
+    <itunes:explicit>yes</itunes:explicit>
+    <itunes:category text="other"/>
+    <item>
+      <title><![CDATA[vol.1056 老狼&钟立风:我们还需要民谣吗?]]></title>
+      <itunes:author><![CDATA[大内密谈]]></itunes:author>
+      <link>https://www.lizhi.fm/dhp_static/static/h5_dhp_app/share.html#/voice?voiceId=2988804408024139270&amp;podcastId=5146923333175295103</link>
+      <itunes:subtitle><![CDATA[vol.1056 老狼&钟立风:我们还需要民谣吗?]]></itunes:subtitle>
+      <description><![CDATA[了划水怪的大型追星现场，钟立风老师的八卦分享会，以及老狼优秀音乐人安利大会，这究竟是怎么一回事，答案还要大家去节目里寻找啦～<br><br>更多精彩内容，欢迎收听本期节目。<br><br>主播 / 相征、郭小寒<br>嘉宾 / 老狼、钟立风<br>音频后期 / BBBBUDDHA<br>音频上传 / Observer<br><br>Playlist：<br>00:27:07 钟立风 - 弄错的车站（live）<br>01:53:41 阿依巴尔·都曼 - 可爱的一朵玫瑰花<br>02:30:43 瓦依那 - 河水清清好洗手<br><br>大内密谈的各种帐号都是“大内密谈”<br>欢迎加入 欢迎互动：）]]></description>
+      <itunes:image href="http://cdn.lizhi.fm/audio_cover/2023/01/29/2988804408023994887_80x80.jpg"/>
+      <enclosure url="http://cdn.lizhi.fm/audio/2023/01/29/2988804408024139270_hd.mp3" length="147893997" type="audio/mpeg"/>
+      <guid>http://cdn.lizhi.fm/audio/2023/01/29/2988804408024139270_hd.mp3</guid>
+      <pubDate>Sun, 29 Jan 2023 21:50:31 +0800</pubDate>
+      <itunes:duration>9240</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[vol.1055 和中国奇谭的主创们聊了个愉快的天]]></title>
+      <itunes:author><![CDATA[大内密谈]]></itunes:author>
+      <link>https://www.lizhi.fm/dhp_static/static/h5_dhp_app/share.html#/voice?voiceId=2988223621071638022&amp;podcastId=5146923333175295103</link>
+      <itunes:subtitle><![CDATA[vol.1055 和中国奇谭的主创们聊了个愉快的天]]></itunes:subtitle>
+      <description><![CDATA[去年年末大火的动画短片集《中国奇谭》，一经播出就大获好评。划水怪看完之后也大呼过瘾，这不就找来了《中国奇谭》的总导演陈廖宇，以及第五集《小满》陈莲华和周小琳导演一起来聊一聊背后的创作故事。总导演在整个项目中担当怎样的角色？《小妖怪的夏天》结尾是否是刻意而为之？又为何选择志怪故事作为主题？《小满》的创作又有哪些趣事？对于《中国奇谭》想必大家也有很多好奇，那就快来收听本期节目吧！<br><br>更多精彩内容，欢迎收听本期节目。<br><br>主播 / 相征<br>嘉宾 / 陈廖宇、陈莲华、周小琳<br>音频后期 / 划水怪<br>音频上传 / Observer<br><br>Playlist：<br>01:14:30 马久越 - 再次回忆<br>01:55:10 鲸鱼马戏团 - 再会了，宝船<br><br>大内密谈的各种帐号都是“大内密谈”<br>欢迎加入 欢迎互动：）]]></description>
+      <itunes:image href="http://cdn.lizhi.fm/audio_cover/2023/01/26/2988223621072036871_80x80.jpg"/>
+      <enclosure url="http://cdn.lizhi.fm/audio/2023/01/26/2988223621071638022_hd.mp3" length="111728407" type="audio/mpeg"/>
+      <guid>http://cdn.lizhi.fm/audio/2023/01/26/2988223621071638022_hd.mp3</guid>
+      <pubDate>Thu, 26 Jan 2023 18:28:29 +0800</pubDate>
+      <itunes:duration>6979</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[vol.1054 且看香菇王来闹个春! 兔年第一闹!]]></title>
+      <itunes:author><![CDATA[大内密谈]]></itunes:author>
+      <link>https://www.lizhi.fm/dhp_static/static/h5_dhp_app/share.html#/voice?voiceId=2987485526954176006&amp;podcastId=5146923333175295103</link>
+      <itunes:subtitle><![CDATA[vol.1054 且看香菇王来闹个春! 兔年第一闹!]]></itunes:subtitle>
+      <description><![CDATA[大年初一，先祝各位大密蜜们新年快乐！今天，大家期待已久的香菇王终于回归！倪咕咕回到北京和老王、划水怪重聚，聊一聊那些年三人关于过年的回忆。说到过年，那些只留在记忆中的习俗、放鞭炮的乐趣以及想想就流口水的美食，咱们都要好好聊一聊。各位同学关于春节的难忘回忆，也欢迎在评论区留言告诉我们，大家一起乐呵乐呵～<br><br>更多精彩内容，欢迎收听本期节目。<br><br>主播 / 相征<br>嘉宾 / 老王、倪兵<br>音频后期 / BBBBUDDHA<br>音频上传 / Observer<br><br>Playlist：<br>01:38:17 初音ミク,IA - Rabbit<br><br>大内密谈的各种帐号都是“大内密谈”<br>欢迎加入 欢迎互动：）]]></description>
+      <itunes:image href="http://cdn.lizhi.fm/audio_cover/2023/01/22/2987485527379365895_80x80.jpg"/>
+      <enclosure url="http://cdn.lizhi.fm/audio/2023/01/22/2987485526954176006_hd.mp3" length="97974208" type="audio/mpeg"/>
+      <guid>http://cdn.lizhi.fm/audio/2023/01/22/2987485526954176006_hd.mp3</guid>
+      <pubDate>Sun, 22 Jan 2023 18:58:13 +0800</pubDate>
+      <itunes:duration>6120</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[vol.1053 时光机终于重返Live Aid]]></title>
+      <itunes:author><![CDATA[大内密谈]]></itunes:author>
+      <link>https://www.lizhi.fm/dhp_static/static/h5_dhp_app/share.html#/voice?voiceId=2986923957232237574&amp;podcastId=5146923333175295103</link>
+      <itunes:subtitle><![CDATA[vol.1053 时光机终于重返Live Aid]]></itunes:subtitle>
+      <description><![CDATA[开头曲响起，有待时光机再出发，掐指一算，上一次起飞竟然是11个月之前。今天三位再度合体，我们终于要一起回到1985年7月13号Live Aid现场，看一看那场人类历史上最伟大的演出。<br><br>八十年代，世界摇滚音乐早已是群星璀璨，皇后乐队、U2、鲍勃·迪伦、布鲁斯·斯普林斯汀、菲尔·科林斯……那些让摇滚乐迷们津津乐道的名字和歌曲都曾在那个年代闪耀。与此同时，中国迎来改革开放，对于当时的中国青年来说，Live Aid像是一股春风，唤醒了年轻人对音乐的渴望与热枕，并决定了一些人一生的道路。<br><br>无论你是否热爱摇滚乐，只要你看过或是听过Live Aid的故事，都会为之热泪盈眶，因为那是我们都曾向往的时代，一个群星闪耀的时代，一个天下大同的时代。<br><br>更多精彩内容，欢迎收听本期节目。<br><br>主播 / 相征<br>嘉宾 / 张有待、宋晓辉<br>音频后期 / BBBBUDDHA、桃子<br>音频上传 / Observer<br><br>Playlist：<br>00:19:39 Michael Jackson - One Day In Your Life<br>00:21:23 Michael Jackson - The Girl Is Mine (With Paul McCartney)<br>00:25:13 Lionel Richie & Michael Jackson - We Are The World<br>00:43:26 Band Aid - Do They Know It's Christmas<br>01:44:00 群星 - 让世界充满爱<br><br>大内密谈的各种帐号都是“大内密谈”<br>欢迎加入 欢迎互动：）]]></description>
+      <itunes:image href="http://cdn.lizhi.fm/audio_cover/2023/01/19/2986923959980474375_80x80.jpg"/>
+      <enclosure url="http://cdn.lizhi.fm/audio/2023/01/19/2986923957232237574_hd.mp3" length="106099748" type="audio/mpeg"/>
+      <guid>http://cdn.lizhi.fm/audio/2023/01/19/2986923957232237574_hd.mp3</guid>
+      <pubDate>Thu, 19 Jan 2023 20:00:02 +0800</pubDate>
+      <itunes:duration>6627</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[vol.1052 日娱再切开 : 2022不负责盘点完结]]></title>
+      <itunes:author><![CDATA[大内密谈]]></itunes:author>
+      <link>https://www.lizhi.fm/dhp_static/static/h5_dhp_app/share.html#/voice?voiceId=2986185571349521926&amp;podcastId=5146923333175295103</link>
+      <itunes:subtitle><![CDATA[vol.1052 日娱再切开 : 2022不负责盘点完结]]></itunes:subtitle>
+      <description><![CDATA[各位大密蜜们，七多圈の2022下半年日娱盘点终于来了！这一期，七多圈依旧不改跑题本色，第七老师在划水怪和多姐的争吵打岔中，努力拉回主题。三人从今年一起看过的红白歌会聊起，从男爱豆夺权聊到女偶像婚恋，当然还少不了“不伦教父”第七老师的不伦大复盘。除了每次都会拿出来鞭尸的东出昌大、渡部建，今年还多了一些新面孔。当然大家也都知道，我们除了是一个盘点节目同时也是一个预言节目，划水怪对当红女演员A某与人气男演员B某的绯闻也做出了大胆预测，他们都是谁？这绯闻究竟是真是假？其中的答案，还要各位大密蜜们去节目中寻找了～<br><br>更多精彩内容，欢迎收听本期节目。<br><br>主播 / 相征<br>嘉宾 / 第七、多多<br>音频后期 / 桃子<br>音频上传 / Observer<br><br>Playlist：<br>02:15:51 安全地帯 - I Love Youからはじめよう<br><br>大内密谈的各种帐号都是“大内密谈”<br>欢迎加入 欢迎互动：）]]></description>
+      <itunes:image href="http://cdn.lizhi.fm/audio_cover/2023/01/15/2986185571348877831_80x80.jpg"/>
+      <enclosure url="http://cdn.lizhi.fm/audio/2023/01/15/2986185571349521926_hd.mp3" length="132647688" type="audio/mpeg"/>
+      <guid>http://cdn.lizhi.fm/audio/2023/01/15/2986185571349521926_hd.mp3</guid>
+      <pubDate>Sun, 15 Jan 2023 18:53:28 +0800</pubDate>
+      <itunes:duration>8287</itunes:duration>
+    </item>
+  </channel>
+</rss>

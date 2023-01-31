@@ -27,6 +27,7 @@
     "@zhengbangbo/eslint-config": "^0.0.8",
     "date-fns": "^2.29.3",
     "eslint": "^8.31.0",
+    "msw": "^1.0.0",
     "typescript": "^4.9.4",
     "unocss": "^0.45.30",
     "unplugin-auto-import": "^0.11.5",
@@ -36,5 +37,8 @@
     "vitest": "^0.26.3",
     "vue-router": "^4.1.6",
     "vue-tsc": "^0.40.13"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
