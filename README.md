@@ -2,9 +2,9 @@
 ![](https://img.shields.io/badge/vue-3.2-brightgreen)
 [![](https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true)](https://chat.imzbb.cc)
 
-This site was developed by listeners of the podcast and is not an official site.
+这个网站是由播客的听众开发的，不是官方网站。
 
-Technology Stack: Vue 3 + TypeScript + Vite 3 + UnoCSS + vite-ssg
+技术栈：Vue 3 + TypeScript + Vite 3 + UnoCSS
 
 ### RSS
 
