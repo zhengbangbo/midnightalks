@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onBeforeMount, onMounted, onUnmounted, ref } from 'vue'
+import { useDebounceFn } from '@vueuse/core'
 import { useRouter } from 'vue-router'
 import { PodcastData } from '../apis'
 import { getEpisode, getEpisodeCover, getEpisodeCreated, getEpisodeTitle } from '../utils'
@@ -14,13 +15,13 @@ const created = ep => getEpisodeCreated(ep)
 const cover = ep => getEpisodeCover(ep)
 const title = ep => getEpisodeTitle(ep)
 
-const handleScroll = () => {
+const handleScroll = useDebounceFn(() => {
   if (window.scrollY > 1000)
     isDisplay.value = 'block'
 
   else
     isDisplay.value = 'none'
-}
+}, 200)
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
@@ -63,7 +64,11 @@ const goTo = {
       </div>
     </div>
   </div>
-  <div class="rd-50%" bg-black fixed text-10 bottom-5 right-5 w-20 h-20 text-center :style="{ display: isDisplay }" @click="scrollToTop">
+  <div
+    z-2
+    cursor-pointer class="rd-50%"
+    bg-black hover:bg-blue fixed text-10 bottom-5 right-5 w-20 h-20 text-center :style="{ display: isDisplay }" @click="scrollToTop"
+  >
     <div flex="~" justify-center items-center w-full h-full color-white>
       Top
     </div>
