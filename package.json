@@ -11,6 +11,7 @@
     "test": "vitest ."
   },
   "dependencies": {
+    "pinia": "^2.0.29",
     "rss-to-json": "^2.1.1",
     "vue": "^3.2.45",
     "vue3-lazy": "1.0.0-alpha.1"

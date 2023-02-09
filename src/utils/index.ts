@@ -1,10 +1,10 @@
-export interface podcast {
-  description: string
-  category: []
-  image: string
-  items: episode[]
-  link: string
+export interface rssObj {
   title: string
+  description: string
+  link: string
+  image: string
+  category: []
+  items: episode[]
 }
 
 export interface episode {
@@ -28,22 +28,6 @@ export interface image {
   href: string
 }
 
-export function getPodcastTitle(date: podcast) {
-  return date.title
-}
-
-export function getPodcastDescription(date: podcast) {
-  return date.description
-}
-
-export function getEpisode(date: podcast) {
-  return date.items
-}
-
-export function getEpisodeTitle(aEpisode: episode) {
-  return aEpisode.title.trim()
-}
-
 export function getNumberFrom(title: string) {
   const hello = {
     '大内密谈试录不一定播': '00',
@@ -64,6 +48,7 @@ export function getNumberFrom(title: string) {
     '九年。九个故事。': '九年。九个故事。',
   }
   if (title in hello) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     return hello[title]
   }
@@ -71,14 +56,6 @@ export function getNumberFrom(title: string) {
   const result = regex.exec(title) || ''
   console.error(`${result[0]} - ${title}`)
   return result[0]
-}
-
-export function getEpisodeDescription(aEpisode: episode) {
-  return aEpisode.description
-}
-
-export function getEpisodeCreated(aEpisode: episode) {
-  return aEpisode.created
 }
 
 export function getEpisodeCover(aEpisode: episode) {

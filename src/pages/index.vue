@@ -1,19 +1,22 @@
 <script setup lang="ts">
-import { onBeforeMount, onMounted, onUnmounted, ref } from 'vue'
 import { useDebounceFn } from '@vueuse/core'
+import { onBeforeMount, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { PodcastData } from '../apis'
-import { getEpisode, getEpisodeCover, getEpisodeCreated, getEpisodeTitle } from '../utils'
+import { usePodcastStore } from '../stores'
+import type { episode } from '../utils'
+import { fixedCoverUrl } from '../utils'
 
-const episodeData = ref()
-onBeforeMount(async () => episodeData.value = getEpisode(await PodcastData()))
+const podcastDate = usePodcastStore()
+const episodeData = ref<episode[]>()
+onBeforeMount(
+  async () => {
+    await podcastDate.getPodcastData()
+    episodeData.value = podcastDate.podcastData.items
+  },
+)
 const router = useRouter()
 
 const isDisplay = ref('none')
-
-const created = ep => getEpisodeCreated(ep)
-const cover = ep => getEpisodeCover(ep)
-const title = ep => getEpisodeTitle(ep)
 
 const handleScroll = useDebounceFn(() => {
   if (window.scrollY > 1000)
@@ -33,7 +36,7 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-const anchor = (ep: string) => `#${created(ep)}`
+const anchor = (created: number) => `#${created}`
 const goTo = {
   episodeDetail: (created: number) => {
     router.push({
@@ -48,19 +51,19 @@ const goTo = {
 
 <template>
   <div flex="~" @scroll="handleScroll">
-    <div flex-1 overflow-auto>
+    <div flex-1 overflow-auto p-3>
       <img
-        v-for="ep in episodeData"
-        :id="created(ep).toString()" :key="created(ep).toString()" v-lazy="cover(ep)"
-        inline-block w="50%" :alt="title(ep)"
+        v-for="{ created, itunes_image } in episodeData"
+        :id="created.toString()" :key="created.toString()" v-lazy="fixedCoverUrl(itunes_image.href)"
+        inline-block w="50%" :alt="created.toString()"
         p-1
-        @click="goTo.episodeDetail(created(ep))"
+        @click="goTo.episodeDetail(created)"
       >
     </div>
 
     <div w="38.2%" text-26px color-white>
-      <div v-for="ep in episodeData" :key="getEpisodeCreated(ep)" hover:color-black>
-        <a :href="anchor(ep)">{{ title(ep) }}</a>
+      <div v-for="{created, title } in episodeData" :key="created" hover:color-black pl-5 pt-3>
+        <a :href="anchor(created)">{{ title }}</a>
       </div>
     </div>
   </div>

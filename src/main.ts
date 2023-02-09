@@ -1,6 +1,7 @@
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import lazyPlugin from 'vue3-lazy'
 import App from './App.vue'
 import loading from './assets/logo.jpg'
@@ -13,8 +14,10 @@ if (process.env.NODE_ENV === 'development')
   worker.start()
 
 async function setupApp() {
+  const pinia = createPinia()
   const app = createApp(App)
   await setupRouter(app)
+  app.use(pinia)
   app.use(lazyPlugin, {
     loading,
     error,
