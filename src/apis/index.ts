@@ -13,9 +13,7 @@ import { default as rss2json } from 'rss-to-json'
 
 export async function PodcastData() {
   try {
-    const CORS_PROXY = 'https://cors-anywhere.zbb.workers.dev/'
-    const url = 'https://rss.lizhi.fm/rss/14275.xml'
-    return await rss2json(CORS_PROXY + encodeURIComponent(url))
+    return await rss2json('/api/podcast')
   }
   catch (e) {
     console.error(e)

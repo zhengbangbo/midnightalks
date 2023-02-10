@@ -1,0 +1,1 @@
+{"bundles":[{"asset":"8dadf2b1bed4688c31a91d895a0ef859d883cfbee8837a4dc16a80b0acfb32f6.eszip","format":"eszip2"}],"routes":[{"function":"podcast","pattern":"^/api/podcast/?$"}],"post_cache_routes":[],"bundler_version":"8.4.0","layers":[],"import_map":"netlify:import-map","function_config":{}}

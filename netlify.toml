@@ -1,0 +1,8 @@
+[build]
+  command = "vite build"
+  functions = "netlify/functions"
+  publish = "dist"
+
+[[edge_functions]]
+  path = "/api/podcast"
+  function = "podcast"
