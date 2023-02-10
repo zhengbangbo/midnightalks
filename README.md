@@ -1,4 +1,5 @@
 # Midnight Talks Website
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7cf5df66-2611-46c6-b20e-f49e012cabb7/deploy-status)](https://app.netlify.com/sites/midnightalks/deploys)
 ![](https://img.shields.io/badge/vue-3.2-brightgreen)
 [![](https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true)](https://chat.imzbb.cc)
 
