@@ -12,8 +12,8 @@ import { setupRouter } from './router'
 import './style.css'
 import 'vue-loading-overlay/dist/css/index.css'
 
-// if (process.env.NODE_ENV === 'development')
-//   worker.start()
+if (process.env.NODE_ENV === 'development')
+  worker.start()
 
 async function setupApp() {
   const pinia = createPinia()

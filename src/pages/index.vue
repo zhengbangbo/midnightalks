@@ -7,16 +7,18 @@ import { usePodcastStore } from '../stores'
 import type { episode } from '../utils'
 import { fixedCoverUrl } from '../utils'
 
-const podcastDate = usePodcastStore()
+const podcastStore = usePodcastStore()
 const episodeData = ref<episode[]>()
 const $loading = useLoading()
 onBeforeMount(
   async () => {
-    const loader = $loading.show()
-    await podcastDate.getPodcastData().then(() => {
-      loader.hide()
-    })
-    episodeData.value = podcastDate.podcastData.items
+    if (!podcastStore.podcastData.items) {
+      const loader = $loading.show()
+      await podcastStore.getPodcastData().then(() => {
+        loader.hide()
+      })
+    }
+    episodeData.value = podcastStore.podcastData.items
   },
 )
 const router = useRouter()
