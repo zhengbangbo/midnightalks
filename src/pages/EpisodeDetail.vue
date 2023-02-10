@@ -32,7 +32,7 @@ onBeforeMount(
       >
     </a>
 
-    <div id="title" text-14 text-white pt-10>
+    <div id="title" text-14 text-white p-2 pt-10>
       {{ detail?.title }}
     </div>
     <div text-6 text-white p-8 v-html="detail?.description" />
