@@ -25,6 +25,7 @@ const handleScroll = useDebounceFn(() => {
   else
     isDisplay.value = 'none'
 }, 200)
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
@@ -54,7 +55,7 @@ const goTo = {
     <div flex-1 overflow-auto p-3>
       <img
         v-for="{ created, itunes_image } in episodeData"
-        :id="created.toString()" :key="created.toString()" v-lazy="fixedCoverUrl(itunes_image.href)"
+        :id="created.toString()" :key="created.toString()" v-lazy="fixedCoverUrl(itunes_image?.href)"
         inline-block w="50%" :alt="created.toString()"
         p-1
         @click="goTo.episodeDetail(created)"
@@ -62,7 +63,7 @@ const goTo = {
     </div>
 
     <div w="38.2%" text-26px color-white>
-      <div v-for="{created, title } in episodeData" :key="created" hover:color-black pl-5 pt-3>
+      <div v-for="{ created, title } in episodeData" :key="created" hover:color-black pl-5 pt-3>
         <a :href="anchor(created)">{{ title }}</a>
       </div>
     </div>

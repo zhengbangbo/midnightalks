@@ -62,7 +62,7 @@ export function getEpisodeCover(aEpisode: episode) {
   return fixedCoverUrl(aEpisode.itunes_image?.href)
 }
 
-export function fixedCoverUrl(originUrl: string) {
+export function fixedCoverUrl(originUrl: string | undefined, originImage = false, size = 1000) {
   if (!originUrl) return ''
   if (originUrl.length === 69)
     return `https${originUrl.toString().slice(4, 59)}.jpg`
@@ -70,5 +70,7 @@ export function fixedCoverUrl(originUrl: string) {
   if (originUrl.length === 70)
     return `https${originUrl.toString().slice(4, 60)}.jpg`
 
-  return `https${originUrl.toString().slice(4, 62)}_1000x1000.jpg`
+  return originImage
+    ? `https${originUrl.toString().slice(4, 62)}.jpg`
+    : `https${originUrl.toString().slice(4, 62)}_${size}x${size}.jpg`
 }

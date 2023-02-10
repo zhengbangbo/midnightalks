@@ -28,11 +28,11 @@ onBeforeMount(
   <div flex flex-col w-full h-full justify-center items-center>
     <a href="#title">
       <img
-        :src="fixedCoverUrl(detail?.itunes_image.href)"
+        :src="fixedCoverUrl(detail?.itunes_image.href, true)"
       >
     </a>
 
-    <div text-14 text-white pt-10 id="title">
+    <div id="title" text-14 text-white pt-10>
       {{ detail?.title }}
     </div>
     <div text-6 text-white p-8 v-html="detail?.description" />
