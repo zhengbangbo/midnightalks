@@ -1,3 +1,20 @@
 {
-	"siteId": "7cf5df66-2611-46c6-b20e-f49e012cabb7"
+	"promptVSCodeSettings": true,
+	"geolocation": {
+		"data": {
+			"city": "Zhongshan",
+			"country": {
+				"code": "CN",
+				"name": "China"
+			},
+			"subdivision": {
+				"code": "GD",
+				"name": "Guangdong"
+			},
+			"timezone": "Asia/Shanghai",
+			"latitude": 22.5326,
+			"longitude": 113.3646
+		},
+		"timestamp": 1676012215122
+	}
 }
