@@ -1,7 +1,7 @@
 import '@unocss/reset/tailwind.css'
+import { createPinia } from 'pinia'
 import 'uno.css'
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 import lazyPlugin from 'vue3-lazy'
 import App from './App.vue'
 import loading from './assets/logo.jpg'
