@@ -2,20 +2,24 @@
 import { useDebounceFn } from '@vueuse/core'
 import { onBeforeMount, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useLoading } from 'vue-loading-overlay'
 import { usePodcastStore } from '../stores'
 import type { episode } from '../utils'
 import { fixedCoverUrl } from '../utils'
 
 const podcastDate = usePodcastStore()
 const episodeData = ref<episode[]>()
+const $loading = useLoading()
 onBeforeMount(
   async () => {
-    await podcastDate.getPodcastData()
+    const loader = $loading.show()
+    await podcastDate.getPodcastData().then(() => {
+      loader.hide()
+    })
     episodeData.value = podcastDate.podcastData.items
   },
 )
 const router = useRouter()
-
 const isDisplay = ref('none')
 
 const handleScroll = useDebounceFn(() => {
@@ -55,14 +59,14 @@ const goTo = {
     <div flex-1 overflow-auto p-3>
       <!-- <Suspense>
         <template #default> -->
-          <img
-            v-for="{ created, itunes_image } in episodeData"
-            :id="created.toString()" :key="created.toString()" v-lazy="fixedCoverUrl(itunes_image?.href)"
-            inline-block lg:w="50%" :alt="created.toString()"
-            p-1
-            @click="goTo.episodeDetail(created)"
-          >
-        <!-- </template>
+      <img
+        v-for="{ created, itunes_image } in episodeData"
+        :id="created.toString()" :key="created.toString()" v-lazy="fixedCoverUrl(itunes_image?.href)"
+        inline-block lg:w="50%" :alt="created.toString()"
+        p-1
+        @click="goTo.episodeDetail(created)"
+      >
+      <!-- </template>
         <template #fallback>
           <div flex="~" justify-center items-center>
             全速加载
@@ -71,7 +75,7 @@ const goTo = {
       </Suspense> -->
     </div>
 
-    <div  w="38.2%"  text-18px lg:text-26px color-white pr-1>
+    <div w="38.2%" text-18px lg:text-26px color-white pr-1>
       <div v-for="{ created, title } in episodeData" :key="created" hover:color-black lg:pl-5 pt-3>
         <a :href="anchor(created)">{{ title }}</a>
       </div>
@@ -80,7 +84,7 @@ const goTo = {
   <div
     z-2
     cursor-pointer class="rd-50%"
-    bg-black hover:bg-blue fixed text-6 lg:text-10 bottom-5 right-5 w-12 lg:w-20  h-12 lg:h-20 text-center :style="{ display: isDisplay }" @click="scrollToTop"
+    bg-black hover:bg-blue fixed text-6 lg:text-10 bottom-5 right-5 w-12 lg:w-20 h-12 lg:h-20 text-center :style="{ display: isDisplay }" @click="scrollToTop"
   >
     <div flex="~" justify-center items-center w-full h-full color-white>
       Top

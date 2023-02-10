@@ -22,6 +22,7 @@ specifiers:
   vite-plugin-inspect: ^0.7.15
   vitest: ^0.26.3
   vue: ^3.2.45
+  vue-loading-overlay: ^6.0
   vue-router: ^4.1.6
   vue-tsc: ^0.40.13
   vue3-lazy: 1.0.0-alpha.1
@@ -30,6 +31,7 @@ dependencies:
   pinia: 2.0.29_2hxmazfbcwwtly5fgw7ckvmlau
   rss-to-json: 2.1.1
   vue: 3.2.45
+  vue-loading-overlay: 6.0.2_vue@3.2.45
   vue3-lazy: 1.0.0-alpha.1_vue@3.2.45
 
 devDependencies:
@@ -4059,6 +4061,15 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /vue-loading-overlay/6.0.2_vue@3.2.45:
+    resolution: {integrity: sha512-5GCvv6hPjNfHg+tKnLkk6yO/b/AdCCkdZb2dfrVFOuDyJz38dbm34k6oohVy/xIoFzPGsEEVtwCxq5G3RIYZ1Q==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: 3.2.45
+    dev: false
 
   /vue-router/4.1.6_vue@3.2.45:
     resolution: {integrity: sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ==}

@@ -1,18 +1,26 @@
 <script setup lang="ts">
 import { onBeforeMount, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useLoading } from 'vue-loading-overlay'
 import { usePodcastStore } from '../stores'
 import type { episode } from '../utils'
 import { fixedCoverUrl } from '../utils'
 
 const props = defineProps(['created'])
 const router = useRouter()
+const $loading = useLoading()
 
 const podcastStore = usePodcastStore()
 const detail = ref<episode>()
 onBeforeMount(
   async () => {
-    await podcastStore.getPodcastData()
+    if (podcastStore.podcastData.items.length === 0) {
+      const loader = $loading.show()
+      await podcastStore.getPodcastData().then(() => {
+        loader.hide()
+      })
+    }
+
     const items = podcastStore.podcastData.items
     const created_list = items.map(items => items.created)
     const index = created_list.indexOf(parseInt(props.created))

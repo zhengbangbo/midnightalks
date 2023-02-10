@@ -3,21 +3,24 @@ import { createPinia } from 'pinia'
 import 'uno.css'
 import { createApp } from 'vue'
 import lazyPlugin from 'vue3-lazy'
+import { LoadingPlugin } from 'vue-loading-overlay'
 import App from './App.vue'
 import loading from './assets/logo.jpg'
 import error from './assets/not-found.jpg'
 import { worker } from './mocks/browser'
 import { setupRouter } from './router'
 import './style.css'
+import 'vue-loading-overlay/dist/css/index.css'
 
-if (process.env.NODE_ENV === 'development')
-  worker.start()
+// if (process.env.NODE_ENV === 'development')
+//   worker.start()
 
 async function setupApp() {
   const pinia = createPinia()
   const app = createApp(App)
   await setupRouter(app)
   app.use(pinia)
+  app.use(LoadingPlugin)
   app.use(lazyPlugin, {
     loading,
     error,
