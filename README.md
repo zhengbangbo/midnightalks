@@ -5,6 +5,8 @@
 
 这个网站是由播客的听众开发的，不是官方网站。
 
+有任何建议欢迎与我联系(github@imzbb.cc)，我很乐意改进。
+
 技术栈：Vue 3 + TypeScript + Vite 3 + UnoCSS
 
 ### RSS
