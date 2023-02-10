@@ -22,6 +22,12 @@ onBeforeMount(
   },
 )
 const router = useRouter()
+
+onMounted(() => {
+  // 微信浏览器中，路由跳转新页面不会自动到顶部
+  router.afterEach(() => { window.scrollTo(0, 0) })
+})
+
 const isDisplay = ref('none')
 
 const handleScroll = useDebounceFn(() => {
