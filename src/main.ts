@@ -2,6 +2,7 @@ import '@unocss/reset/tailwind.css'
 import { createPinia } from 'pinia'
 import 'uno.css'
 import { createApp } from 'vue'
+import { createHead } from '@vueuse/head'
 import lazyPlugin from 'vue3-lazy'
 import { LoadingPlugin } from 'vue-loading-overlay'
 import App from './App.vue'
@@ -18,8 +19,10 @@ if (process.env.NODE_ENV === 'development')
 async function setupApp() {
   const pinia = createPinia()
   const app = createApp(App)
+  const head = createHead()
   await setupRouter(app)
   app.use(pinia)
+  app.use(head)
   app.use(LoadingPlugin)
   app.use(lazyPlugin, {
     loading,
