@@ -14,7 +14,7 @@ const podcastStore = usePodcastStore()
 const detail = ref<episode>()
 onBeforeMount(
   async () => {
-    if (podcastStore.podcastData.items.length === 0) {
+    if (!podcastStore.podcastData.title) {
       const loader = $loading.show()
       await podcastStore.getPodcastData().then(() => {
         loader.hide()
