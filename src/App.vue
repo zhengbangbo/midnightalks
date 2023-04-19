@@ -10,21 +10,10 @@ const headDefault = {
   ],
 }
 
-const useUmami = {
-  script: [
-    {
-      'src': 'https://u.imzbb.cc/u.js',
-      'async': true,
-      'defer': true,
-      'data-website-id': '18ce7a3b-77df-42cf-aa9f-f7114d0cc053',
-    },
-  ],
-}
-
 // <script async defer data-website-id="18ce7a3b-77df-42cf-aa9f-f7114d0cc053" src="https://u.imzbb.cc/u.js"/>
 useHead(
   process.env.NODE_ENV === 'production'
-    ? { ...headDefault, ...useUmami }
+    ? { ...headDefault }
     : { ...headDefault },
 )
 </script>
