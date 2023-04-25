@@ -2,6 +2,7 @@
 import { onBeforeMount, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLoading } from 'vue-loading-overlay'
+import { useHead } from '@vueuse/head'
 import { usePodcastStore } from '../stores'
 import type { episode } from '../utils'
 import { fixedCoverUrl } from '../utils'
@@ -12,6 +13,7 @@ const $loading = useLoading()
 
 const podcastStore = usePodcastStore()
 const detail = ref<episode>()
+
 onBeforeMount(
   async () => {
     if (!podcastStore.podcastData.title) {
@@ -28,6 +30,14 @@ onBeforeMount(
       detail.value = items[index]
     else
       router.replace('/')
+
+    useHead({
+      title: detail.value?.title,
+      meta: [
+        { name: 'description', content: detail.value?.description },
+        { name: 'keywords', content: detail.value?.title },
+      ],
+    })
   },
 )
 </script>
