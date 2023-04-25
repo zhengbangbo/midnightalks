@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useDebounceFn } from '@vueuse/core'
-import { onBeforeMount, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onBeforeMount, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLoading } from 'vue-loading-overlay'
 import { usePodcastStore } from '../stores'
@@ -64,6 +64,10 @@ const goTo = {
 // 搜索过滤后的数据
 const searchEpisodeData = ref()
 
+const searchResultCount = computed(() => {
+  return searchEpisodeData.value?.length
+})
+
 const search = () => {
   if (searchText.value === '') { searchEpisodeData.value = null }
 
@@ -82,7 +86,7 @@ const search = () => {
       w-100 h-10 p-2 m-2 text-2xl rounded @keyup.enter="search"
     >
     <div v-if="searchEpisodeData" text="#eee">
-      搜索结果
+      共得到 {{searchResultCount}} 个搜索结果
     </div>
     <div v-if="searchEpisodeData" b-1 grid grid-cols-2 bg="#eee" rd-2 gap-2>
       <div
