@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useDebounceFn } from '@vueuse/core'
-import { computed, onBeforeMount, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onBeforeMount, onMounted, onUnmounted, ref, vModelCheckbox } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLoading } from 'vue-loading-overlay'
 import { usePodcastStore } from '../stores'
@@ -64,6 +64,8 @@ const goTo = {
 // 搜索过滤后的数据
 const searchEpisodeData = ref()
 
+const withDescription = ref(false)
+
 const searchResultCount = computed(() => {
   return searchEpisodeData.value?.length
 })
@@ -73,6 +75,9 @@ const search = () => {
 
   else {
     searchEpisodeData.value = episodeData.value?.filter((item) => {
+      if (withDescription.value)
+        return item.title?.toLowerCase().includes(searchText.value.toLowerCase()) || item.description?.toLowerCase().includes(searchText.value.toLowerCase())
+
       return item.title?.toLowerCase().includes(searchText.value.toLowerCase())
     })
   }
@@ -81,14 +86,18 @@ const search = () => {
 
 <template>
   <div flex="~ col" justify-center items-center @scroll="handleScroll">
-    <input
-      v-model="searchText" placeholder="搜索" op-50
-      w-100 h-10 p-2 m-2 text-2xl rounded @keyup.enter="search"
-    >
-    <div v-if="searchEpisodeData" text="#eee">
-      共得到 {{searchResultCount}} 个搜索结果
+    <div>
+      <input
+        v-model="searchText" placeholder="输入关键词进行搜索" op-50
+        w-100 h-10 p-2 m-2 text-2xl rounded @keyup.enter="search"
+      >
+      <label for="withDescription">包含描述</label>
+      <input v-model="withDescription" name="withDescription" type="checkbox" @change="search">
     </div>
-    <div v-if="searchEpisodeData" b-1 grid grid-cols-2 bg="#eee" rd-2 gap-2>
+    <div v-if="searchEpisodeData" text="#eee">
+      共得到 {{ searchResultCount }} 个搜索结果
+    </div>
+    <div v-if="searchEpisodeData" grid grid-cols-2 bg="#eee" bg-op-20 rd-2 gap-2 p-2>
       <div
         v-for="{ created, itunes_image, title } in searchEpisodeData"
         :id="created.toString()" :key="created.toString()" w-150 h-150 relative
@@ -96,7 +105,7 @@ const search = () => {
         <CoverCard :created="created" :itunes_image="itunes_image" :title="title" :go-to="goTo.episodeDetail" />
       </div>
     </div>
-    <div grid grid-cols-2 p-1 gap-2>
+    <div grid grid-cols-2 p-2 gap-2>
       <div
         v-for="{ created, itunes_image, title } in episodeData"
         :id="created.toString()" :key="created.toString()" w-150 h-150 relative

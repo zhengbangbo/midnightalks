@@ -32,7 +32,7 @@ onBeforeMount(
       router.replace('/')
 
     useHead({
-      title: detail.value?.title,
+      title: `${detail.value?.title} - 大内密谈`,
       meta: [
         { name: 'description', content: detail.value?.description },
         { name: 'keywords', content: detail.value?.title },
