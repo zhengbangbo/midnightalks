@@ -1,10 +1,11 @@
 # Midnight Talks Website
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7cf5df66-2611-46c6-b20e-f49e012cabb7/deploy-status)](https://app.netlify.com/sites/midnightalks/deploys)
-![](https://img.shields.io/badge/Vue-3.2-brightgreen)
-![](https://img.shields.io/badge/TypeScript-5.0-brightgreen)
-![](https://img.shields.io/badge/Vite-4.2-brightgreen)
-![](https://img.shields.io/badge/UnoCSS-0.51-brightgreen)
-[![](https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true)](https://chat.imzbb.cc)
+![Vue](https://img.shields.io/badge/Vue-3.2-brightgreen)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-brightgreen)
+![Vite](https://img.shields.io/badge/Vite-4.2-brightgreen)
+![UnoCSS](https://img.shields.io/badge/UnoCSS-0.51-brightgreen)
+[![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true)](https://chat.imzbb.cc)
 
 这个网站是由播客的听众开发的，不是官方网站。
 

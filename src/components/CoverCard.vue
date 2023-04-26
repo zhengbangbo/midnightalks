@@ -13,7 +13,7 @@ const { title, created, itunes_image, goTo } = defineProps<{
 
 <template>
   <div
-    flex justify-center items-center text-2xl rounded-lg
+    flex justify-center items-center rounded-lg
     absolute w-full h-full
   >
     <img

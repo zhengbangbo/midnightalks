@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useDebounceFn } from '@vueuse/core'
-import { computed, onBeforeMount, onMounted, onUnmounted, ref, vModelCheckbox } from 'vue'
+import { computed, onBeforeMount, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLoading } from 'vue-loading-overlay'
 import { usePodcastStore } from '../stores'
@@ -46,10 +46,6 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
-
 const goTo = {
   episodeDetail: (created: number) => {
     router.push({
@@ -82,45 +78,33 @@ const search = () => {
     })
   }
 }
+
+const searchFocus = ref(false)
 </script>
 
 <template>
-  <div flex="~ col" justify-center items-center @scroll="handleScroll">
-    <div>
+  <div flex="~ col" justify-center items-center w-full @scroll="handleScroll">
+    <div
+      flex="~ row" items-center
+      w-100 h-10 p-2 m-2 text-2xl rd-10 b-2 bg-white
+      :class="searchFocus ? 'op-100' : 'op-50'"
+    >
+      <div i-carbon-search />
       <input
-        v-model="searchText" placeholder="输入关键词进行搜索" op-50
-        w-100 h-10 p-2 m-2 text-2xl rounded @keyup.enter="search"
+        v-model="searchText" placeholder="搜索大内密谈"
+        focus-visible-outline-none p-1
+        font-sans
+        bg-transparent w-full @keyup.enter="search" @focus="searchFocus = true" @blur="searchFocus = false"
       >
-      <label for="withDescription">包含描述</label>
-      <input v-model="withDescription" name="withDescription" type="checkbox" @change="search">
     </div>
     <div v-if="searchEpisodeData" text="#eee">
       共得到 {{ searchResultCount }} 个搜索结果
+      (<label for="withDescription">包含描述</label>
+      <input v-model="withDescription" name="withDescription" type="checkbox" @change="search">)
     </div>
-    <div v-if="searchEpisodeData" grid grid-cols-2 bg="#eee" bg-op-20 rd-2 gap-2 p-2>
-      <div
-        v-for="{ created, itunes_image, title } in searchEpisodeData"
-        :id="created.toString()" :key="created.toString()" w-150 h-150 relative
-      >
-        <CoverCard :created="created" :itunes_image="itunes_image" :title="title" :go-to="goTo.episodeDetail" />
-      </div>
-    </div>
-    <div grid grid-cols-2 p-2 gap-2>
-      <div
-        v-for="{ created, itunes_image, title } in episodeData"
-        :id="created.toString()" :key="created.toString()" w-150 h-150 relative
-      >
-        <CoverCard :created="created" :itunes_image="itunes_image" :title="title" :go-to="goTo.episodeDetail" />
-      </div>
-      <div
-        z-2 cursor-pointer class="rd-50%" bg-black hover:bg-op-30 fixed text-6 lg:text-10 bottom-5 right-5 w-12 lg:w-20
-        h-12 lg:h-20 text-center :style="{ display: showReturnTop }" @click="scrollToTop"
-      >
-        <div flex="~" justify-center items-center w-full h-full color-white>
-          Top
-        </div>
-      </div>
-    </div>
+    <CardContainer v-if="searchEpisodeData" container w-full :episode-data="searchEpisodeData" :go-to="goTo" m-2 bg="#eee" rd-2 />
+    <CardContainer container w-full :episode-data="episodeData" :go-to="goTo" />
+    <ReturnTop :show-return-top="showReturnTop" />
   </div>
 </template>
 
