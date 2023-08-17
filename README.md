@@ -4,12 +4,15 @@
 ![](https://img.shields.io/badge/TypeScript-5.0-brightgreen)
 ![](https://img.shields.io/badge/Vite-4.2-brightgreen)
 ![](https://img.shields.io/badge/UnoCSS-0.51-brightgreen)
-[![](https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true)](https://chat.imzbb.cc)
+
+![Screenshot](src/assets/screenshot.jpeg)
 
 这个网站是由播客的听众开发的，不是官方网站。
 
 > **Note**
-> 由于本人设计能力欠佳，所以UI方面非常粗糙。如果您有任何好的建议，欢迎与我联系。
+> 由于本人设计能力欠佳，所以 UI 方面非常粗糙。如果您有任何好的建议，欢迎与我联系。
+
+以下是我搜索到的与《大内密探》相关的链接:
 
 ## RSS
 
