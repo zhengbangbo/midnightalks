@@ -9,8 +9,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    CoverCard: typeof import('./../components/CoverCard.vue')['default']
-    DeclarationBanner: typeof import('./../components/DeclarationBanner.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
