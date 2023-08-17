@@ -53,6 +53,9 @@ onBeforeMount(
     <div id="title" text-14 text-white p-2 pt-10>
       {{ detail?.title }}
     </div>
+    <AudioPlayer
+      :src="detail?.enclosures[0].url"
+    />
     <div text-6 text-white p-8 v-html="detail?.description" />
   </div>
 </template>
